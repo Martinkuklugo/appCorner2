@@ -2,17 +2,15 @@
 import 'package:flutter/material.dart';
 import 'package:liga_corner_app/dtos/providers/partidos_provider.dart';
 import 'package:liga_corner_app/pages/detalle_partido_page.dart';
+import 'package:liga_corner_app/pages/buttom_jorneys.dart';
 import 'package:liga_corner_app/utils.dart';
 import 'package:liga_corner_app/widgets/card_titile.dart';
 import 'package:liga_corner_app/widgets/config_Responsive.dart';
 import 'package:provider/provider.dart';
 
-//import '../dtos/responses/requests/partidos_response_dto.dart';
-
 class PartidosPage extends StatelessWidget {
-  //final PartidosResponseDto? partidos;
   const PartidosPage({
-    super.key, //required this.partidos
+    super.key,
   });
 
   @override
@@ -25,9 +23,14 @@ class PartidosPage extends StatelessWidget {
         create: (context) => PartidosProvider()..fetchUsers(),
         //operador de cascada
         child: Scaffold(
+          backgroundColor: const Color(0XFFE8E8E8),
           body: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
+              const Padding(
+                padding: const EdgeInsets.all(8.0),
+                child: Jornadas(),
+              ),
               const Padding(
                 padding: EdgeInsets.symmetric(vertical: 10),
                 child: CardTitlePartidos(),
@@ -46,9 +49,6 @@ class PartidosPage extends StatelessWidget {
                               itemCount: PartidosProvider.partidos?.length,
                               itemBuilder: (context, index) {
                                 final plays = PartidosProvider.partidos?[index];
-                                // const SizedBox(
-                                //   height: 10,
-                                // );
                                 return Padding(
                                   padding:
                                       const EdgeInsets.symmetric(vertical: 5),
@@ -95,7 +95,7 @@ class PartidosPage extends StatelessWidget {
                                                                           .tEmblem ==
                                                                       null
                                                                   ? Image.asset(
-                                                                      'images/logoLigaTorneo.jpg')
+                                                                      'images/default_image_team.jpg')
                                                                   : Image
                                                                       .network(
                                                                       'https://ligasabatinadefutbol.com.mx/media/bearleague/${plays?.team1.tEmblem}',
@@ -105,7 +105,7 @@ class PartidosPage extends StatelessWidget {
                                                                           StackTrace?
                                                                               stackTrace) {
                                                                         return Image.asset(
-                                                                            'images/logoLigaTorneo.jpg');
+                                                                            'images/default_image_team.jpg');
                                                                       },
                                                                     ),
                                                             )),
@@ -152,7 +152,7 @@ class PartidosPage extends StatelessWidget {
                                                                         .tEmblem ==
                                                                     null
                                                                 ? Image.asset(
-                                                                    'images/logoLigaTorneo.jpg')
+                                                                    'images/default_image_team.jpg')
                                                                 : Image.network(
                                                                     'https://ligasabatinadefutbol.com.mx/media/bearleague/${plays?.team2.tEmblem}',
                                                                     errorBuilder: (BuildContext
@@ -163,7 +163,7 @@ class PartidosPage extends StatelessWidget {
                                                                             stackTrace) {
                                                                       return Image
                                                                           .asset(
-                                                                              'images/logoLigaTorneo.jpg');
+                                                                              'images/default_image_team.jpg');
                                                                     },
                                                                   ),
                                                           )),
@@ -240,8 +240,7 @@ class PartidosPage extends StatelessWidget {
                                           width: double.infinity,
                                           height: 41 * fem,
                                           decoration: const BoxDecoration(
-                                            color: Color.fromARGB(
-                                                223, 19, 175, 27),
+                                            color: Color(0xFF4ECF84),
                                             borderRadius: BorderRadius.only(
                                               bottomRight: Radius.circular(10),
                                               bottomLeft: Radius.circular(10),

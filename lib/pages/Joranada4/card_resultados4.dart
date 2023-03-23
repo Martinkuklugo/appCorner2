@@ -6,8 +6,8 @@ import 'package:liga_corner_app/widgets/resumen_resultados_pages.dart';
 import 'package:liga_corner_app/utils.dart';
 import 'package:liga_corner_app/widgets/config_Responsive.dart';
 
-class CardResultados extends StatelessWidget {
-  const CardResultados({
+class CardResultados4 extends StatelessWidget {
+  const CardResultados4({
     super.key,
     required this.plays,
     required this.fem,

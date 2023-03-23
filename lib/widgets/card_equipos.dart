@@ -40,9 +40,16 @@ class CardEquipos extends StatelessWidget {
                 // ignore: avoid_unnecessary_containers
                 child: Container(
                   child: Expanded(
-                    child: Image.network(
-                      'https://ligasabatinadefutbol.com.mx/media/bearleague/${UrlImage}',
-                    ),
+                    // ignore: unnecessary_null_comparison
+                    child: UrlImage == null
+                        ? Image.asset('images/default_image_team.png')
+                        : Image.network(
+                            'https://ligasabatinadefutbol.com.mx/media/bearleague/${UrlImage}',
+                            errorBuilder: (context, error, stackTrace) {
+                              return Image.asset(
+                                  'images/default_image_team.png');
+                            },
+                          ),
                   ),
                 ),
               ),
@@ -103,39 +110,33 @@ class CardEquipos extends StatelessWidget {
                     ),
                     Container(
                       child: Expanded(
-                        child: Text(
-                          city,
-                          overflow: TextOverflow.ellipsis,
-                          style: SafeGoogleFont('Nunito',
-                              color: const Color(0xff595959)),
-                          // style: const TextStyle(
-                          //   color: Colors.black,
-                          //),
-                        ),
+                        child: city != null
+                            ? Text(city)
+                            : const Text("Texto por defecto"),
                       ),
                     ),
                   ],
                 ),
               ),
             ),
-            Container(
-              height: SizeConfig.blockSizeVertical(4),
-              color: const Color.fromARGB(223, 19, 175, 27),
-              child: TextButton(
-                onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) => const PlayersPage()));
-                },
-                child: Center(
-                    child: Text(
-                  'Detalles',
-                  style: SafeGoogleFont('Nunito',
-                      color: Colors.white, fontWeight: FontWeight.bold),
-                )),
-              ),
-            )
+            // Container(
+            //   height: SizeConfig.blockSizeVertical(4),
+            //   color: Color(0xFF4ECF84),
+            //   child: TextButton(
+            //     onPressed: () {
+            //       Navigator.push(
+            //           context,
+            //           MaterialPageRoute(
+            //               builder: (context) => const PlayersPage()));
+            //     },
+            //     child: Center(
+            //         child: Text(
+            //       'Detalles',
+            //       style: SafeGoogleFont('Nunito',
+            //           color: Colors.white, fontWeight: FontWeight.bold),
+            //     )),
+            //   ),
+            // )
           ],
         ),
       ),

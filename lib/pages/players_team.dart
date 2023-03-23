@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:liga_corner_app/dtos/providers/equipos_provider.dart';
-import 'package:liga_corner_app/dtos/providers/players_provider.dart';
 import 'package:liga_corner_app/dtos/responses/requests/equipos_response.dart';
 import 'package:liga_corner_app/utils.dart';
 import 'package:provider/provider.dart';
@@ -49,6 +48,7 @@ class PlayersTeamPage extends StatelessWidget {
                                     leading: const Icon(Icons.person_2_rounded),
                                     title: Text(
                                         '${player?.firstName} ${player?.lastName}'),
+                                        
                                   ),
                                 ),
                               ],

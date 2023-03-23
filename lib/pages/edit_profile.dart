@@ -122,7 +122,7 @@ class _ImputEdidProfileState extends State<ImputEdidProfile> {
                     color: Color(0xFF4ECF84),
                   ),
                   border: OutlineInputBorder(
-                   borderSide: BorderSide(color: Color(0xFF4ECF84))),
+                      borderSide: BorderSide(color: Color(0xFF4ECF84))),
                   labelText: 'Correo Electronico',
                 ),
                 validator: (String? value) {
@@ -142,8 +142,7 @@ class _ImputEdidProfileState extends State<ImputEdidProfile> {
                 shadowColor: Colors.greenAccent,
                 elevation: 3,
                 shape: RoundedRectangleBorder(
-                    borderRadius: BorderRadius.circular(10.0)
-                    ),
+                    borderRadius: BorderRadius.circular(10.0)),
               ),
               onPressed: () {
                 // Validate will return true if the form is valid, or false if

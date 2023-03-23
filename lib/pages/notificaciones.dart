@@ -3,7 +3,7 @@ import 'package:liga_corner_app/core/info_notificaciones.dart';
 import 'package:liga_corner_app/utils.dart';
 
 class MyNotification extends StatefulWidget {
- const MyNotification({super.key});
+  const MyNotification({super.key});
 
   @override
   State<MyNotification> createState() => _MyNotificationState();

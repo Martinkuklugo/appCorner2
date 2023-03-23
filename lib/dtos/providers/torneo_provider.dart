@@ -15,7 +15,7 @@ class TorneoProvider extends ChangeNotifier {
 
   Future fetchUsers() async {
     final response = await http
-        .get(Uri.parse('http://api.ligasabatinadefutbol.com.mx/api/seasons'));
+        .get(Uri.parse('http://api.ligasabatinadefutbol.com.mx/api/seasons?s_id=42'));
 
     if (response.statusCode == 200) {
       // If the server did return a 200 OK response,

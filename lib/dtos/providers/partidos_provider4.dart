@@ -4,7 +4,7 @@ import 'package:liga_corner_app/dtos/responses/requests/partidos_response_dto.da
 import 'package:logger/logger.dart';
 import 'package:http/http.dart' as http;
 
-class PartidosProvider extends ChangeNotifier {
+class PartidosProvider4 extends ChangeNotifier {
   bool isLoading = true;
 
   final logger = Logger();
@@ -16,7 +16,7 @@ class PartidosProvider extends ChangeNotifier {
 
   Future fetchUsers() async {
     final response = await http
-        .get(Uri.parse('http://api.ligasabatinadefutbol.com.mx/api/matches?page=100'));
+        .get(Uri.parse('http://api.ligasabatinadefutbol.com.mx/api/matches?page=98'));
 
     if (response.statusCode == 200) {
       // If the server did return a 200 OK response,

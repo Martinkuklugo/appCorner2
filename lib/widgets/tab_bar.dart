@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:liga_corner_app/pages/equipos_page.dart';
 import 'package:liga_corner_app/pages/resultados_page.dart';
-import 'package:liga_corner_app/pages/torneos_pages.dart';
+import 'package:liga_corner_app/pages/table_positions.dart';
 
 import '../pages/partidos_page.dart';
 
@@ -32,7 +32,8 @@ class _MyTabBarState extends State with SingleTickerProviderStateMixin {
     double baseWidth = 400;
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.50;
-      return Scaffold(
+    return Scaffold(
+      backgroundColor: const Color(0XFFE8E8E8),
       appBar: AppBar(
         elevation: 0,
         title: Image.asset(
@@ -40,7 +41,7 @@ class _MyTabBarState extends State with SingleTickerProviderStateMixin {
           height: 50,
           width: 120,
         ),
-        backgroundColor:const Color.fromARGB(223, 19, 175, 27),
+        backgroundColor: const Color(0xFF4ECF84),
       ),
       body: SingleChildScrollView(
         child: Padding(
@@ -52,42 +53,40 @@ class _MyTabBarState extends State with SingleTickerProviderStateMixin {
                 const SizedBox(height: 5),
                 Container(
                   width: MediaQuery.of(context).size.height,
-                  decoration: BoxDecoration(
-                      borderRadius: BorderRadius.circular(10)),
+                  decoration:
+                      BoxDecoration(borderRadius: BorderRadius.circular(10)),
                   child: Column(
                     children: [
                       Padding(
                         padding: const EdgeInsets.all(5), //
                         child: TabBar(
-                          overlayColor: MaterialStateProperty.resolveWith<Color?>(
+                          overlayColor:
+                              MaterialStateProperty.resolveWith<Color?>(
                             (Set<MaterialState> states) {
-                                if (states.contains(MaterialState.hovered)) {
-                                  return Color.fromARGB(255, 82, 244, 101); //<-- SEE HERE
-                                }
-                            return null; 
+                              if (states.contains(MaterialState.hovered)) {
+                                return const Color(0xFF4ECF84); //<-- SEE HERE
+                              }
+                              return null;
                             },
-                            ),
+                          ),
                           unselectedLabelColor: const Color(0xFF595959),
-                          labelColor:const Color.fromARGB(255, 255, 255, 255),
+                          labelColor: const Color.fromARGB(255, 255, 255, 255),
                           indicatorWeight: 2,
                           indicator: BoxDecoration(
-                            color: const Color.fromARGB(223, 19, 175, 27),
+                            color: const Color(0xFF4ECF84),
                             borderRadius: BorderRadius.circular(10),
                           ),
                           controller: tabController,
                           tabs: const [
                             Tab(
-                              text: 'Partidos',
-                            ),
-                            Tab(
-                              text: 'Torneos',
-                            ),
-                            Tab(
-                              text: 'Resultados',
-                            ),
+                              text: 'Jornadas',
+                            ),      
                             Tab(
                               text: 'Equipos',
                             ),
+                            Tab(
+                              text: 'Tabla de Posiciones',
+                            )
                           ],
                         ),
                       ),
@@ -99,12 +98,10 @@ class _MyTabBarState extends State with SingleTickerProviderStateMixin {
                   controller: tabController,
                   children: const [
                     PartidosPage(),
-                    TorneosPages(),
-                    ResultadosPage(),
-                    TeamsPages()
+                    TeamsPages(),
+                    TablaPosicion()
                   ],
-                )
-                ),
+                )),
               ],
             ),
           ),

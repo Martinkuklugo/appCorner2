@@ -35,14 +35,10 @@ class _EdidProfileState extends State<EdidProfile> {
         child: Center(
           child: Column(
             mainAxisAlignment: MainAxisAlignment.center,
-            children: const [
-  
-              ],
+            children: const [],
           ),
         ),
       ),
     );
   }
 }
-
-

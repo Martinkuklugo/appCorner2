@@ -39,6 +39,7 @@ dependencies:
   transparent_image: ^2.0.1
   shared_preferences: ^2.0.18
   google_nav_bar: ^5.0.6
+  youtube_player_flutter: 8.1.0
 flutter_icons:
   android: 'launcher_icon'
   ios: false
@@ -85,6 +86,7 @@ flutter:
     - images/user.jpg 
     - images/settingIconProfile.png
     - images\logoLigaTorneo.jpg
+    - images\default_image_team.jpg
   # An image asset can refer to one or more resolution-specific "variants", see
   # https://flutter.dev/assets-and-images/#resolution-aware
 
