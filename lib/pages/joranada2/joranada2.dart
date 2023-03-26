@@ -30,7 +30,7 @@ class ResultadosPage2 extends StatelessWidget {
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
-                    const CardTitleResumen(),
+                    const CardTitleResumen2(),
                     Consumer<PartidosProvider2>(
                         builder: (context, PartidosProvider, child) =>
                             PartidosProvider.isLoading
