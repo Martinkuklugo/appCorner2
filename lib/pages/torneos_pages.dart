@@ -1,11 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:liga_corner_app/dtos/providers/torneo_provider.dart';
-import 'package:liga_corner_app/pages/table_positions.dart';
-import 'package:liga_corner_app/pages/vista_torneos.dart';
-import 'package:liga_corner_app/utils.dart';
 import 'package:liga_corner_app/widgets/card_titile.dart';
 import 'package:liga_corner_app/widgets/config_Responsive.dart';
-import 'package:liga_corner_app/widgets/nav_bar.dart';
 import 'package:liga_corner_app/widgets/tab_bar.dart';
 import 'package:provider/provider.dart';
 
@@ -53,58 +49,38 @@ class TorneosPages extends StatelessWidget {
                         itemBuilder: (BuildContext context, int index) {
                           final torneo = TorneoProvider.torneos?[index];
                           return Card(
-                            elevation: 5,
+                          elevation: 5,
                             shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(10)),
-                            margin: const EdgeInsets.all(10),
-                            color: const Color(0xFF4ECF84),
-                            clipBehavior: Clip.hardEdge,
-                            child: InkWell(
-                              splashColor:
-                                  const Color.fromARGB(255, 148, 225, 148),
-                              onTap: () {
-                                Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                        builder: (context) =>
-                                            const  MyTabBar()));
-                              },
-                              child: Column(
-                                children: [
-                                  Container(
-                                    padding: const EdgeInsets.all(10),
-                                    child: Column(
-                                      children: [
-                                        Text(
-                                          '${torneo?.sName}',
-                                          style: SafeGoogleFont('Nunito',
-                                              color: const Color(0xFFFFFFFF),
-                                              fontWeight: FontWeight.bold),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Container(
-                                    height: SizeConfig.blockSizeVertical(20),
-                                    width: SizeConfig.screenWidth,
-                                    color: Colors.white,
-                                    child: Stack(
-                                      children: [
-                                        const Center(
-                                            child: CircularProgressIndicator(
-                                                color: Color(0xFF4ECF84))),
-                                        Center(
-                                            child: SizedBox(
-                                                width: SizeConfig
-                                                    .blockSizeHorizontal(20),
-                                                height: SizeConfig
-                                                    .blockSizeVertical(15),
-                                                child: FittedBox(
-                                                    fit: BoxFit.cover,
-                                                    child: Image.network(
-                                                      'https://cdn.pixabay.com/photo/2016/11/29/02/05/audience-1866738_1280.jpg',
-                                                    ))))
-                                      ],
+                             borderRadius: BorderRadius.circular(10),
+                            ),
+                          margin: const EdgeInsets.all(10),
+                          clipBehavior: Clip.hardEdge,
+                          child: InkWell(
+                          splashColor: const Color.fromARGB(255, 148, 225, 148),
+                          onTap: () {
+                          Navigator.push(
+                          context,
+                            MaterialPageRoute(
+                            builder: (context) => const MyTabBar(),
+                              ),
+                            );
+                          },
+                            child: Stack(
+                            fit: StackFit.expand,
+                            children: [
+                            Image.network(
+                            'https://cdn.pixabay.com/photo/2016/11/29/02/05/audience-1866738_1280.jpg',
+                            fit: BoxFit.cover,
+                            ),
+                            Center(
+                            child: Text(
+                            '${torneo?.sName}',
+                            style: const TextStyle(
+                            color: Colors.white,
+                            fontSize: 24,
+                            fontWeight: FontWeight.bold,
+                              ),
+                            textAlign: TextAlign.center,
                                     ),
                                   ),
                                 ],
@@ -115,8 +91,9 @@ class TorneosPages extends StatelessWidget {
                       ),
                     ),
                   ),
-          ),
-        ]),
+           ),
+          ] 
+        ),
       ),
     );
   }

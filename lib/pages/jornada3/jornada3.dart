@@ -1,6 +1,5 @@
 // ignore_for_file: camel_case_types
 import 'package:flutter/material.dart';
-import 'package:liga_corner_app/dtos/providers/partidos_provider.dart';
 import 'package:liga_corner_app/dtos/providers/partidos_provider3.dart';
 import 'package:liga_corner_app/pages/jornada3/card_resultados3.dart';
 import 'package:liga_corner_app/widgets/card_titile.dart';
