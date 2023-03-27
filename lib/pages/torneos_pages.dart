@@ -18,82 +18,82 @@ class TorneosPages extends StatelessWidget {
       //operador de cascada
       child: Scaffold(
         appBar: AppBar(
-        centerTitle: true,
-        elevation: 0,
-        title: Image.asset(
-          'images/logo.png',
-          height: 50,
-          width: 120,
+          centerTitle: true,
+          elevation: 0,
+          title: Image.asset(
+            'images/logo.png',
+            height: 50,
+            width: 120,
+          ),
+          backgroundColor: Colors.transparent,
         ),
-        backgroundColor: Colors.transparent,
-      ),
         backgroundColor: const Color(0XFFE8E8E8),
         body: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           const CardTitleSelectTornaments(),
           Consumer<TorneoProvider>(
-            builder: (context, TorneoProvider, child) => TorneoProvider
-                    .isLoading
-                ? const Center(
-                    child: CircularProgressIndicator(
-                      color: Color(0xFF4ECF84),
-                    ),
-                  )
-                : Expanded(
-                    child: Padding(
-                      padding: const EdgeInsets.symmetric(vertical: 10),
-                      child: GridView.builder(
-                        gridDelegate:
-                            const SliverGridDelegateWithFixedCrossAxisCount(
-                                crossAxisCount: 1, mainAxisExtent: 290),
-                        itemCount: TorneoProvider.torneos?.length,
-                        itemBuilder: (BuildContext context, int index) {
-                          final torneo = TorneoProvider.torneos?[index];
-                          return Card(
-                          elevation: 5,
-                            shape: RoundedRectangleBorder(
-                             borderRadius: BorderRadius.circular(10),
-                            ),
-                          margin: const EdgeInsets.all(10),
-                          clipBehavior: Clip.hardEdge,
-                          child: InkWell(
-                          splashColor: const Color.fromARGB(255, 148, 225, 148),
-                          onTap: () {
-                          Navigator.push(
-                          context,
-                            MaterialPageRoute(
-                            builder: (context) => const MyTabBar(),
-                              ),
-                            );
-                          },
-                            child: Stack(
-                            fit: StackFit.expand,
-                            children: [
-                            Image.network(
-                            'https://cdn.pixabay.com/photo/2016/11/29/02/05/audience-1866738_1280.jpg',
-                            fit: BoxFit.cover,
-                            ),
-                            Center(
-                            child: Text(
-                            '${torneo?.sName}',
-                            style: const TextStyle(
-                            color: Colors.white,
-                            fontSize: 24,
-                            fontWeight: FontWeight.bold,
-                              ),
-                            textAlign: TextAlign.center,
-                                    ),
+            builder: (context, TorneoProvider, child) =>
+                TorneoProvider.isLoading
+                    ? const Center(
+                        child: CircularProgressIndicator(
+                          color: Color(0xFF4ECF84),
+                        ),
+                      )
+                    : Expanded(
+                        child: Padding(
+                          padding: const EdgeInsets.symmetric(vertical: 10),
+                          child: GridView.builder(
+                            gridDelegate:
+                                const SliverGridDelegateWithFixedCrossAxisCount(
+                                    crossAxisCount: 1, mainAxisExtent: 290),
+                            itemCount: TorneoProvider.torneos?.length,
+                            itemBuilder: (BuildContext context, int index) {
+                              final torneo = TorneoProvider.torneos?[index];
+                              return Card(
+                                elevation: 5,
+                                shape: RoundedRectangleBorder(
+                                  borderRadius: BorderRadius.circular(10),
+                                ),
+                                margin: const EdgeInsets.all(10),
+                                clipBehavior: Clip.hardEdge,
+                                child: InkWell(
+                                  splashColor:
+                                      const Color.fromARGB(255, 148, 225, 148),
+                                  onTap: () {
+                                    Navigator.push(
+                                      context,
+                                      MaterialPageRoute(
+                                        builder: (context) => const MyTabBar(),
+                                      ),
+                                    );
+                                  },
+                                  child: Stack(
+                                    fit: StackFit.expand,
+                                    children: [
+                                      Image.network(
+                                        'https://cdn.pixabay.com/photo/2016/11/29/02/05/audience-1866738_1280.jpg',
+                                        fit: BoxFit.cover,
+                                      ),
+                                      Center(
+                                        child: Text(
+                                          '${torneo?.sName}',
+                                          style: const TextStyle(
+                                            color: Colors.white,
+                                            fontSize: 24,
+                                            fontWeight: FontWeight.bold,
+                                          ),
+                                          textAlign: TextAlign.center,
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                ],
-                              ),
-                            ),
-                          );
-                        },
+                                ),
+                              );
+                            },
+                          ),
+                        ),
                       ),
-                    ),
-                  ),
-           ),
-          ] 
-        ),
+          ),
+        ]),
       ),
     );
   }
