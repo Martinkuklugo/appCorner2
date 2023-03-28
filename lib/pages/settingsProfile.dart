@@ -17,7 +17,7 @@ class _SettingsProfilePageState extends State<SettingsProfilePage> {
     const String title = 'Ajustes de Perfil';
 
     return Scaffold(
-      backgroundColor: const Color(0xFFE8E8E8),
+      backgroundColor: const Color(0xFFFFFFFF),
       appBar: AppBar(
         backgroundColor: const Color(0xFFE8E8E8),
         elevation: 0,

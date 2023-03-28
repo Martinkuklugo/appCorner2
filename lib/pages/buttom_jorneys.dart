@@ -15,7 +15,9 @@ class Jornadas extends StatelessWidget {
       child: Padding(
         padding: const EdgeInsets.all(8.0),
         child: Row(children: [
-          ElevatedButton(
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ElevatedButton(
               onPressed: () {
                 Navigator.push(
                     context,
@@ -26,46 +28,50 @@ class Jornadas extends StatelessWidget {
                 backgroundColor: const Color(0xFF4ECF84),
                 elevation: 20,
                 shadowColor: Colors.grey.shade50,
-              shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10),
-              ),
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
                 ),
-              child: const Text('Joranada 4'),
               ),
+              child: const Text('Joranada 4'),
+            ),
+          ),
+          Padding(
+            padding: const EdgeInsets.all(8.0),
+            child: ElevatedButton(
+              onPressed: () {
+                Navigator.push(
+                    context,
+                    MaterialPageRoute(
+                        builder: (context) => const ResultadosPage3()));
+              },
+              style: ElevatedButton.styleFrom(
+                backgroundColor: const Color(0xFF4ECF84),
+                elevation: 20, // Elevation
+                shadowColor: Colors.grey.shade50,
+                shape: RoundedRectangleBorder(
+                  borderRadius: BorderRadius.circular(10),
+                ),
+              ),
+              child: const Text('Joranada 3'),
+            ),
+          ),
           ElevatedButton(
             onPressed: () {
               Navigator.push(
                   context,
                   MaterialPageRoute(
-                      builder: (context) => const ResultadosPage3()));
+                      builder: (context) => const ResultadosPage2()));
             },
             style: ElevatedButton.styleFrom(
               backgroundColor: const Color(0xFF4ECF84),
-              elevation: 20, // Elevation
+              elevation: 20,
               shadowColor: Colors.grey.shade50,
               shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10),
+                borderRadius: BorderRadius.circular(10),
               ),
             ),
-            child: const Text('Joranada 3'),
+            child: const Text('Joranada 2'),
           ),
-          ElevatedButton(
-              onPressed: () {
-                Navigator.push(
-                    context,
-                    MaterialPageRoute(
-                        builder: (context) => const ResultadosPage2()));
-              },
-              style: ElevatedButton.styleFrom(
-                backgroundColor: const Color(0xFF4ECF84),
-                elevation: 20,
-                shadowColor: Colors.grey.shade50,
-                shape: RoundedRectangleBorder(
-              borderRadius: BorderRadius.circular(10),
-              ),
-              ),
-              child: const Text('Joranada 2'),
-              ),
         ]),
       ),
     );

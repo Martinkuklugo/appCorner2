@@ -27,9 +27,12 @@ class TorneosPages extends StatelessWidget {
           ),
           backgroundColor: Colors.transparent,
         ),
-        backgroundColor: const Color(0XFFE8E8E8),
+        backgroundColor: const Color(0XFFFFFFFF),
         body: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          const CardTitleSelectTornaments(),
+          const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: CardTitleSelectTornaments(),
+          ),
           Consumer<TorneoProvider>(
             builder: (context, TorneoProvider, child) =>
                 TorneoProvider.isLoading
@@ -40,7 +43,7 @@ class TorneosPages extends StatelessWidget {
                       )
                     : Expanded(
                         child: Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 10),
+                          padding: const EdgeInsets.all(10),
                           child: GridView.builder(
                             gridDelegate:
                                 const SliverGridDelegateWithFixedCrossAxisCount(

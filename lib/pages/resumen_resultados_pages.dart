@@ -17,7 +17,7 @@ class ResumenResultados extends StatelessWidget {
     return ChangeNotifierProvider(
         create: (context) => PartidosProvider()..fetchUsers(),
         child: Scaffold(
-            backgroundColor: const Color(0xffE8E8E8),
+            backgroundColor: const Color(0xffFFFFFF),
             appBar: AppBar(
               elevation: 0,
               centerTitle: true,

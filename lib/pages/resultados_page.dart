@@ -22,7 +22,7 @@ class ResultadosPage extends StatelessWidget {
         create: (context) => PartidosProvider()..fetchUsers(),
         //operador de cascada
         child: Padding(
-            padding: const EdgeInsets.symmetric(vertical: 10),
+            padding: const EdgeInsets.all(10),
             child:
                 Column(mainAxisAlignment: MainAxisAlignment.center, children: [
               const CardTitleResumen(),
@@ -45,7 +45,6 @@ class ResultadosPage extends StatelessWidget {
                                           vertical: 5),
                                       child: CardResultados(
                                           plays: plays, fem: fem, ffem: ffem),
-                                          
                                     );
                                   })))
             ])));

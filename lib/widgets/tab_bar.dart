@@ -33,7 +33,7 @@ class _MyTabBarState extends State with SingleTickerProviderStateMixin {
     double fem = MediaQuery.of(context).size.width / baseWidth;
     double ffem = fem * 0.50;
     return Scaffold(
-      backgroundColor: const Color(0XFFE8E8E8),
+      backgroundColor: const Color(0XFFFFFFFF),
       appBar: AppBar(
         elevation: 0,
         title: Image.asset(
@@ -69,6 +69,7 @@ class _MyTabBarState extends State with SingleTickerProviderStateMixin {
                               return null;
                             },
                           ),
+                          indicatorColor: Color(0xffe8e8e8e),
                           unselectedLabelColor: const Color(0xFF595959),
                           labelColor: const Color.fromARGB(255, 255, 255, 255),
                           indicatorWeight: 2,
@@ -80,7 +81,7 @@ class _MyTabBarState extends State with SingleTickerProviderStateMixin {
                           tabs: const [
                             Tab(
                               text: 'Jornadas',
-                            ),      
+                            ),
                             Tab(
                               text: 'Equipos',
                             ),

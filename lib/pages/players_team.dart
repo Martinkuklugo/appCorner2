@@ -15,7 +15,7 @@ class PlayersTeamPage extends StatelessWidget {
     return ChangeNotifierProvider(
       create: (context) => EquiposProvider()..fetchUsers(),
       child: Scaffold(
-        backgroundColor: const Color(0xFFE8E8E8),
+        backgroundColor: const Color(0xFFFFFFFF),
         appBar: AppBar(
           backgroundColor: const Color(0xFF4ECF84),
           elevation: 0,
@@ -42,14 +42,11 @@ class PlayersTeamPage extends StatelessWidget {
                             final player = equipo?.players[index];
                             return Column(
                               children: [
-                                Card(
-                                  child: ListTile(
-                                    // trailing: Text('${player?.team.tName}'),
-                                    leading: const Icon(Icons.person_2_rounded),
-                                    title: Text(
-                                        '${player?.firstName} ${player?.lastName}'),
-                                        
-                                  ),
+                                ListTile(
+                                  // trailing: Text('${player?.team.tName}'),
+                                  leading: const Icon(Icons.person_2_rounded),
+                                  title: Text(
+                                      '${player?.firstName} ${player?.lastName}'),
                                 ),
                               ],
                             );

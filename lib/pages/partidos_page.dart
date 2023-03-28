@@ -23,12 +23,12 @@ class PartidosPage extends StatelessWidget {
         create: (context) => PartidosProvider()..fetchUsers(),
         //operador de cascada
         child: Scaffold(
-          backgroundColor: const Color(0XFFE8E8E8),
+          backgroundColor: const Color(0XFFFFFFFF),
           body: Column(
             mainAxisAlignment: MainAxisAlignment.center,
             children: [
               const Padding(
-                padding: const EdgeInsets.all(8.0),
+                padding: EdgeInsets.all(10),
                 child: Jornadas(),
               ),
               const Padding(
@@ -50,8 +50,7 @@ class PartidosPage extends StatelessWidget {
                               itemBuilder: (context, index) {
                                 final plays = PartidosProvider.partidos?[index];
                                 return Padding(
-                                  padding:
-                                      const EdgeInsets.symmetric(vertical: 5),
+                                  padding: const EdgeInsets.all(5),
                                   child: Card(
                                     elevation: 12,
                                     shape: RoundedRectangleBorder(
@@ -240,7 +239,7 @@ class PartidosPage extends StatelessWidget {
                                           width: double.infinity,
                                           height: 41 * fem,
                                           decoration: const BoxDecoration(
-                                            color: Color(0xFF4ECF84),
+                                            // color: Color(0xFF4ECF84),
                                             borderRadius: BorderRadius.only(
                                               bottomRight: Radius.circular(10),
                                               bottomLeft: Radius.circular(10),
@@ -248,27 +247,32 @@ class PartidosPage extends StatelessWidget {
                                           ),
                                           child: Center(
                                             child: TextButton(
-                                              onPressed: () {
-                                                Navigator.push(
-                                                    context,
-                                                    MaterialPageRoute(
-                                                        builder: (context) =>
-                                                            DetetallesPartido(
-                                                                partidos:
-                                                                    plays)));
-                                              },
-                                              child: Text(
-                                                'Detalles',
-                                                style: SafeGoogleFont(
-                                                  'Nunito',
-                                                  fontSize: 14 * ffem,
-                                                  fontWeight: FontWeight.w800,
-                                                  height: 1.3625 * ffem / fem,
-                                                  color:
-                                                      const Color(0xffFFFFFF),
-                                                ),
-                                              ),
-                                            ),
+                                                onPressed: () {
+                                                  Navigator.push(
+                                                      context,
+                                                      MaterialPageRoute(
+                                                          builder: (context) =>
+                                                              DetetallesPartido(
+                                                                  partidos:
+                                                                      plays)));
+                                                },
+                                                child: ListTile(
+                                                  leading: Text(
+                                                    'Fecha: 23-03-22',
+                                                    style: SafeGoogleFont(
+                                                        'Nunito'),
+                                                  ),
+                                                  title: Text(
+                                                    'Hora: 12:00 pm',
+                                                    style: SafeGoogleFont(
+                                                        'Nunito'),
+                                                  ),
+                                                  trailing: Text(
+                                                    'Lugar: Tetiz ',
+                                                    style: SafeGoogleFont(
+                                                        'Nunito'),
+                                                  ),
+                                                )),
                                           ),
                                         ),
                                       ],
