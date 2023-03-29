@@ -321,7 +321,7 @@ class CardResultados2 extends StatelessWidget {
                     },
                   );
                 },
-                child: Text('Detalles'),
+                child: Text('Detalles', style: TextStyle(color: Colors.white),),
               ),
             ),
           ),

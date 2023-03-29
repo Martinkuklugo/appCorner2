@@ -469,7 +469,7 @@ class PartidosPage extends StatelessWidget {
                                                       },
                                                     );
                                                   },
-                                                  child: Text('Detalles'),
+                                                  child: const Text('Detalles', style: TextStyle(color:  Color(0xFF4ECF84)),),
                                                 ),
                                               ),
                                             ),

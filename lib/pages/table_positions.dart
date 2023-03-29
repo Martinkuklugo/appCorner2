@@ -92,6 +92,7 @@ class TablaPosicion extends StatelessWidget {
                   style: TextStyle(fontStyle: FontStyle.italic),
                 ),
               ),
+              DataColumn(label: Text('PTS', style: TextStyle(fontStyle: FontStyle.italic)))
             ],
             rows: const <DataRow>[
               DataRow(
@@ -102,6 +103,7 @@ class TablaPosicion extends StatelessWidget {
                   DataCell(Text('2')),
                   DataCell(Text('2')),
                   DataCell(Text('89')),
+                  DataCell(Text('43')),
                 ],
               ),
               DataRow(
@@ -112,6 +114,7 @@ class TablaPosicion extends StatelessWidget {
                   DataCell(Text('2')),
                   DataCell(Text('2')),
                   DataCell(Text('60')),
+                  DataCell(Text('43')),
                 ],
               ),
               DataRow(
@@ -122,6 +125,7 @@ class TablaPosicion extends StatelessWidget {
                   DataCell(Text('2')),
                   DataCell(Text('3')),
                   DataCell(Text('54')),
+                  DataCell(Text('39')),
                 ],
               ),
               DataRow(
@@ -132,6 +136,7 @@ class TablaPosicion extends StatelessWidget {
                   DataCell(Text('2')),
                   DataCell(Text('3')),
                   DataCell(Text('57')),
+                  DataCell(Text('37')),
                 ],
               ),
               DataRow(
@@ -142,6 +147,7 @@ class TablaPosicion extends StatelessWidget {
                   DataCell(Text('4')),
                   DataCell(Text('3')),
                   DataCell(Text('50')),
+                  DataCell(Text('37')),
                 ],
               ),
               DataRow(
@@ -152,6 +158,7 @@ class TablaPosicion extends StatelessWidget {
                   DataCell(Text('5')),
                   DataCell(Text('2')),
                   DataCell(Text('56')),
+                  DataCell(Text('33')),
                 ],
               ),
               DataRow(
@@ -162,6 +169,7 @@ class TablaPosicion extends StatelessWidget {
                   DataCell(Text('2')),
                   DataCell(Text('5')),
                   DataCell(Text('50')),
+                  DataCell(Text('32')),
                 ],
               ),
               DataRow(

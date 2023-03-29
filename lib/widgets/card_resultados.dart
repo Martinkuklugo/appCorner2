@@ -308,7 +308,7 @@ class CardResultados extends StatelessWidget {
                 },
                 child: Text('Detalles',
                     style: SafeGoogleFont('Nunito',
-                        color: Color(0xfffffffff),
+                        color: Color.fromARGB(255, 14, 12, 12),
                         fontWeight: FontWeight.bold)),
               ),
             ),

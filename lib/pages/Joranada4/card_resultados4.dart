@@ -335,7 +335,7 @@ class CardResultados4 extends StatelessWidget {
                     },
                   );
                 },
-                child: Text('Detalles'),
+                child: Text('Detalles', style: TextStyle(color: Colors.white),),
               ),
             ),
           ),
