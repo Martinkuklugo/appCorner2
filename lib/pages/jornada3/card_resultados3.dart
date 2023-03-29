@@ -162,7 +162,7 @@ class CardResultados3 extends StatelessWidget {
                     context: context,
                     builder: (BuildContext context) {
                       return AlertDialog(
-                        title: const Text('Detalles'),
+                        title: const Text('Detalles', style: TextStyle(color: Colors.white)),
                         content: SingleChildScrollView(
                           child: ListBody(
                             children: <Widget>[

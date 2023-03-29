@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
 import 'package:liga_corner_app/dtos/providers/torneo_provider.dart';
-import 'package:liga_corner_app/utils.dart';
 import 'package:liga_corner_app/widgets/card_titile.dart';
 import 'package:liga_corner_app/widgets/config_Responsive.dart';
 import 'package:liga_corner_app/widgets/tab_bar.dart';
@@ -31,108 +30,167 @@ class TorneosPages extends StatelessWidget {
         backgroundColor: const Color(0XFFE8E8E8),
         body: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
           const Padding(
-            padding: EdgeInsets.all(8.0),
+            padding: EdgeInsets.all(4.0),
             child: CardTitleSelectTornaments(),
           ),
           Consumer<TorneoProvider>(
             builder: (context, TorneoProvider, child) =>
                 TorneoProvider.isLoading
-                    ? const Center(
+                    ?  const Center(
                         child: CircularProgressIndicator(
                           color: Color(0xFF4ECF84),
                         ),
                       )
                     : Expanded(
-                        child: Padding(
-                          padding: const EdgeInsets.symmetric(vertical: 10),
-                          child: GridView.builder(
-                            gridDelegate:
-                                const SliverGridDelegateWithFixedCrossAxisCount(
-                                    crossAxisCount: 1, mainAxisExtent: 290),
-                            itemCount: TorneoProvider.torneos?.length,
-                            itemBuilder: (BuildContext context, int index) {
-                              final torneo = TorneoProvider.torneos?[index];
-                              return Card(
-                                elevation: 5,
-                                shape: RoundedRectangleBorder(
-                                  borderRadius: BorderRadius.circular(10),
-                                ),
-                                margin: const EdgeInsets.all(10),
-                                clipBehavior: Clip.hardEdge,
-                                child: InkWell(
-                                  splashColor:
-                                      const Color.fromARGB(255, 148, 225, 148),
-                                  onTap: () {
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => const MyTabBar(),
-                                      ),
-                                    );
-                                  },
-                                  child: Stack(
-                                    fit: StackFit.expand,
-                                    children: [
-                                      Image.network(
-                                        'https://cdn.pixabay.com/photo/2016/11/29/02/05/audience-1866738_1280.jpg',
-                                        fit: BoxFit.cover,
-                                      ),
-                                      Center(
-                                        child: Text(
-                                          '${torneo?.sName}',
-                                          style: const TextStyle(
-                                            color: Colors.white,
-                                            fontSize: 24,
-                                            fontWeight: FontWeight.bold,
-                                          ),
-                                          textAlign: TextAlign.center,
+                        child: GridView.builder(
+                          gridDelegate:
+                              const SliverGridDelegateWithFixedCrossAxisCount(
+                                  crossAxisCount: 1, mainAxisExtent: 250),
+                          itemCount: TorneoProvider.torneos?.length,
+                          itemBuilder: (BuildContext context, int index) {
+                            final torneo = TorneoProvider.torneos?[index];
+                            return Card(
+                              elevation: 5,
+                              shape: RoundedRectangleBorder(
+                                borderRadius: BorderRadius.circular(10),
+                              ),
+                              clipBehavior: Clip.hardEdge,
+                              child: InkWell(
+                                splashColor:
+                                    const Color.fromARGB(255, 148, 225, 148),
+                                onTap: () {
+                                  Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) => const MyTabBar(),
+                                    ),
+                                  );
+                                },
+                                child: Stack(
+                                  fit: StackFit.expand,
+                                  children: [
+                                    Image.network(
+                                      'https://cdn.pixabay.com/photo/2016/11/29/02/05/audience-1866738_1280.jpg',
+                                      fit: BoxFit.cover,
+                                    ),
+                                    Center(
+                                      child: Text(
+                                        '${torneo?.sName}',
+                                        style: const TextStyle(
+                                          color: Colors.white,
+                                          fontSize: 24,
+                                          fontWeight: FontWeight.bold,
                                         ),
+                                        textAlign: TextAlign.center,
                                       ),
-                                    ],
-                                  ),
+                                    ),
+                                  ],
                                 ),
-                              );
-                            },
-                          ),
+                              ),
+                            );
+                          },
                         ),
                       ),
           ),
-          Container(
-            height: 400,
-            width: 500,
-            child: Column(
-              children: [
-                const CardTitleNews(),
-                Card(
-                    shape: RoundedRectangleBorder(
-                        borderRadius: BorderRadius.circular(10)),
-                    margin: const EdgeInsets.all(10),
-                    elevation: 10,
-                    child: ClipRRect(
-                      borderRadius: BorderRadius.circular(10),
-                      child: Column(
-                        children: <Widget>[
-                          Container(
-                            
-                            child: const Image(
-                              image: AssetImage('images/new.jpg'),
-                            ),
-                          ),
-                          Container(
-                            padding: const EdgeInsets.all(0),
-                            child: Padding(
-                              padding: const EdgeInsets.all(10),
-                              child: Text(
-                                'Calkiní, campeche. En duelo de líderes Real Santi y Deportivo HAPA presentaron férreo enfrentamiento en los que ninguno de los dos cedió terreno, aunque solo un punto los separa en la tabla de posiciones...',
-                                style: SafeGoogleFont('Nunito', fontSize: 16),
+          Column(
+            verticalDirection: VerticalDirection.down,
+            children: [
+              Container(
+                height: 400,
+                width: 500,
+                child: SingleChildScrollView(
+                  child: Column(
+                    children: [
+                      const CardTitleNews(),
+                      Card(
+                        elevation: 4,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Column(children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(999),
+                                color: Colors
+                                    .grey, // Puedes establecer un color de fondo si lo deseas
+                              ),
+                              height: 100,
+                              child: Image.asset(
+                                'images/new.jpg',
+                                fit: BoxFit.cover,
                               ),
                             ),
                           ),
-                        ],
+                          const Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Text(
+                                '"Intenso empate entre Real Santi y Deportivo HAPA en la Jornada 6 de la liga sabatina de Calkiní, Campeche"'),
+                          )
+                        ]),
                       ),
-                    ))
-              ],
-            ),
+                      Card(
+                        elevation: 4,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Column(children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(999),
+                                color: Colors
+                                    .grey, // Puedes establecer un color de fondo si lo deseas
+                              ),
+                              height: 100,
+                              child: Image.asset(
+                                'images/Noticia2.jpg',
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Text(
+                                '"¡Comienza la temporada con fuerza! Real Santi y club deportivo HAPA lideran la tabla general en la Jornada 2"'),
+                          )
+                        ]),
+                      ),
+                      Card(
+                        elevation: 4,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(20),
+                        ),
+                        child: Column(children: [
+                          Padding(
+                            padding: const EdgeInsets.all(8.0),
+                            child: Container(
+                              decoration: BoxDecoration(
+                                borderRadius: BorderRadius.circular(25),
+                                color: Colors
+                                    .grey, // Puedes establecer un color de fondo si lo deseas
+                              ),
+                              height: 100,
+                              child: Image.asset(
+                                'images/noticia3.jpg',
+                                fit: BoxFit.cover,
+                              ),
+                            ),
+                          ),
+                          const Padding(
+                            padding: EdgeInsets.all(8.0),
+                            child: Text(
+                                '"¡HAPA se corona campeón del mini torneo de pretemporada! Conoce los detalles del emocionante encuentro frente a Real Santi"'),
+                          ),
+                        ]),
+                      ),
+                    ],
+                  ),
+                ),
+              ),
+            ],
           )
         ]),
       ),

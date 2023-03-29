@@ -29,7 +29,7 @@ class MyApp extends StatelessWidget {
       routes: {
         '/settinsProfile': (context) => const SettingsProfilePage(),
         '/edid_Profile': (context) => const EdidProfile(),
-        '/tableposition':(context) => const TablePositionsPage()
+        '/tableposition': (context) => const TablePositionsPage()
       },
       debugShowCheckedModeBanner: false,
       home: const NavigationExample(),
