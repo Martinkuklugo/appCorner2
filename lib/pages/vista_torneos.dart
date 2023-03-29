@@ -27,7 +27,7 @@ class VistasTorneo extends StatelessWidget {
           elevation: 0,
           backgroundColor: Color(0xFF4ECF84),
         ),
-        backgroundColor: const Color(0XFFE8E8E8),
+        backgroundColor: const Color(0XFFFFFFFF),
         body: Column(
           children: [
             const Padding(

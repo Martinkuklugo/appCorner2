@@ -29,7 +29,10 @@ class TorneosPages extends StatelessWidget {
         ),
         backgroundColor: const Color(0XFFE8E8E8),
         body: Column(mainAxisAlignment: MainAxisAlignment.center, children: [
-          const CardTitleSelectTornaments(),
+          const Padding(
+            padding: EdgeInsets.all(8.0),
+            child: CardTitleSelectTornaments(),
+          ),
           Consumer<TorneoProvider>(
             builder: (context, TorneoProvider, child) =>
                 TorneoProvider.isLoading

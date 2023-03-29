@@ -16,7 +16,7 @@ class TeamsPages extends StatelessWidget {
         create: (context) => EquiposProvider()..fetchUsers(),
         //operador de cascada
         child: Scaffold(
-            backgroundColor: const Color(0XFFE8E8E8),
+            backgroundColor: const Color(0XFFFFFFFF),
             body: Container(
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -96,25 +96,30 @@ class TeamsPages extends StatelessWidget {
                                                               child: CircularProgressIndicator(
                                                                   color: Color(
                                                                       0xFF4ECF84))),
-                                                          Center(
-                                                              child: equipos
-                                                                          ?.tEmblem ==
-                                                                      null
-                                                                  ? Image.asset(
-                                                                      'images/default_image_team.jpg')
-                                                                  : FadeInImage
-                                                                      .memoryNetwork(
-                                                                      placeholder:
-                                                                          kTransparentImage,
-                                                                      image:
-                                                                          'https://ligasabatinadefutbol.com.mx/media/bearleague/${equipos?.tEmblem}',
-                                                                      imageErrorBuilder: (context,
-                                                                          error,
-                                                                          stackTrace) {
-                                                                        return Image.asset(
-                                                                            'images/default_image_team.jpg');
-                                                                      },
-                                                                    ))
+                                                          Padding(
+                                                            padding:
+                                                                const EdgeInsets
+                                                                    .all(8.0),
+                                                            child: Center(
+                                                                child: equipos
+                                                                            ?.tEmblem ==
+                                                                        null
+                                                                    ? Image.asset(
+                                                                        'images/default_image_team.jpg')
+                                                                    : FadeInImage
+                                                                        .memoryNetwork(
+                                                                        placeholder:
+                                                                            kTransparentImage,
+                                                                        image:
+                                                                            'https://ligasabatinadefutbol.com.mx/media/bearleague/${equipos?.tEmblem}',
+                                                                        imageErrorBuilder: (context,
+                                                                            error,
+                                                                            stackTrace) {
+                                                                          return Image.asset(
+                                                                              'images/default_image_team.jpg');
+                                                                        },
+                                                                      )),
+                                                          )
                                                         ],
                                                       ) // ),
                                                       ),

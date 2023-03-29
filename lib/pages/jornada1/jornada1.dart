@@ -28,7 +28,7 @@ class ResultadosPage1 extends StatelessWidget {
           create: (context) => PartidosProvider1()..fetchUsers(),
           //operador de cascada
           child: Padding(
-              padding: const EdgeInsets.symmetric(vertical: 10),
+              padding: const EdgeInsets.all(10),
               child: Column(
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
