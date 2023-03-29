@@ -92,7 +92,9 @@ class TablaPosicion extends StatelessWidget {
                   style: TextStyle(fontStyle: FontStyle.italic),
                 ),
               ),
-              DataColumn(label: Text('PTS', style: TextStyle(fontStyle: FontStyle.italic)))
+              DataColumn(
+                  label: Text('PTS',
+                      style: TextStyle(fontStyle: FontStyle.italic)))
             ],
             rows: const <DataRow>[
               DataRow(
@@ -180,6 +182,7 @@ class TablaPosicion extends StatelessWidget {
                   DataCell(Text('5')),
                   DataCell(Text('3')),
                   DataCell(Text('56')),
+                  DataCell(Text('32')),
                 ],
               ),
               DataRow(
@@ -190,6 +193,7 @@ class TablaPosicion extends StatelessWidget {
                   DataCell(Text('5')),
                   DataCell(Text('2')),
                   DataCell(Text('74')),
+                  DataCell(Text('30')),
                 ],
               ),
               DataRow(
@@ -200,6 +204,7 @@ class TablaPosicion extends StatelessWidget {
                   DataCell(Text('8')),
                   DataCell(Text('1')),
                   DataCell(Text('39')),
+                  DataCell(Text('22')),
                 ],
               ),
               DataRow(
@@ -210,6 +215,7 @@ class TablaPosicion extends StatelessWidget {
                   DataCell(Text('6')),
                   DataCell(Text('3')),
                   DataCell(Text('37')),
+                  DataCell(Text('21')),
                 ],
               ),
               DataRow(
@@ -220,6 +226,7 @@ class TablaPosicion extends StatelessWidget {
                   DataCell(Text('9')),
                   DataCell(Text('3')),
                   DataCell(Text('34')),
+                  DataCell(Text('15')),
                 ],
               ),
               DataRow(
@@ -230,6 +237,7 @@ class TablaPosicion extends StatelessWidget {
                   DataCell(Text('12')),
                   DataCell(Text('1')),
                   DataCell(Text('22')),
+                  DataCell(Text('10')),
                 ],
               ),
               DataRow(
@@ -240,6 +248,7 @@ class TablaPosicion extends StatelessWidget {
                   DataCell(Text('11')),
                   DataCell(Text('3')),
                   DataCell(Text('38')),
+                  DataCell(Text('9')),
                 ],
               ),
               DataRow(
@@ -250,6 +259,7 @@ class TablaPosicion extends StatelessWidget {
                   DataCell(Text('11')),
                   DataCell(Text('2')),
                   DataCell(Text('19')),
+                  DataCell(Text('8')),
                 ],
               ),
               DataRow(
@@ -260,6 +270,7 @@ class TablaPosicion extends StatelessWidget {
                   DataCell(Text('0')),
                   DataCell(Text('13')),
                   DataCell(Text('19')),
+                  DataCell(Text('6')),
                 ],
               ),
               DataRow(
@@ -270,6 +281,7 @@ class TablaPosicion extends StatelessWidget {
                   DataCell(Text('13')),
                   DataCell(Text('1')),
                   DataCell(Text('13')),
+                  DataCell(Text('4')),
                 ],
               ),
               DataRow(
@@ -280,6 +292,7 @@ class TablaPosicion extends StatelessWidget {
                   DataCell(Text('15')),
                   DataCell(Text('1')),
                   DataCell(Text('10')),
+                  DataCell(Text('4')),
                 ],
               ),
             ],
