@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:liga_corner_app/dtos/providers/torneo_provider.dart';
+import 'package:liga_corner_app/utils.dart';
 import 'package:liga_corner_app/widgets/card_titile.dart';
 import 'package:liga_corner_app/widgets/config_Responsive.dart';
 import 'package:liga_corner_app/widgets/tab_bar.dart';
@@ -96,6 +97,43 @@ class TorneosPages extends StatelessWidget {
                         ),
                       ),
           ),
+          Container(
+            height: 400,
+            width: 500,
+            child: Column(
+              children: [
+                const CardTitleNews(),
+                Card(
+                    shape: RoundedRectangleBorder(
+                        borderRadius: BorderRadius.circular(10)),
+                    margin: const EdgeInsets.all(10),
+                    elevation: 10,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(10),
+                      child: Column(
+                        children: <Widget>[
+                          Container(
+                            
+                            child: const Image(
+                              image: AssetImage('images/new.jpg'),
+                            ),
+                          ),
+                          Container(
+                            padding: const EdgeInsets.all(0),
+                            child: Padding(
+                              padding: const EdgeInsets.all(10),
+                              child: Text(
+                                'Calkiní, campeche. En duelo de líderes Real Santi y Deportivo HAPA presentaron férreo enfrentamiento en los que ninguno de los dos cedió terreno, aunque solo un punto los separa en la tabla de posiciones...',
+                                style: SafeGoogleFont('Nunito', fontSize: 16),
+                              ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ))
+              ],
+            ),
+          )
         ]),
       ),
     );

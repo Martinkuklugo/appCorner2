@@ -264,8 +264,16 @@ class PartidosPage extends StatelessWidget {
                                                       builder: (BuildContext
                                                           context) {
                                                         return AlertDialog(
-                                                          title: const Text(
-                                                              'Detalles'),
+                                                          title: Text(
+                                                            'Detalles',
+                                                            style: SafeGoogleFont(
+                                                                'Nunito',
+                                                                color: Color(
+                                                                    0xff00595959),
+                                                                fontWeight:
+                                                                    FontWeight
+                                                                        .bold),
+                                                          ),
                                                           content:
                                                               SingleChildScrollView(
                                                             child: ListBody(

@@ -52,11 +52,13 @@ class CardResultados extends StatelessWidget {
                           padding: const EdgeInsets.symmetric(horizontal: 15.0),
                           child: Container(
                               width: SizeConfig.blockSizeHorizontal(45),
-                              child: const Expanded(child: Text('Equipo',style:  TextStyle(fontSize: 20)))),
+                              child: const Expanded(
+                                  child: Text('Equipo',
+                                      style: TextStyle(fontSize: 20)))),
                         ),
                         const Padding(
                           padding: EdgeInsets.symmetric(horizontal: 8.0),
-                          child: Text('Goles',style:  TextStyle(fontSize: 20)),
+                          child: Text('Goles', style: TextStyle(fontSize: 20)),
                         )
                       ],
                     ),
@@ -67,34 +69,41 @@ class CardResultados extends StatelessWidget {
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 8.0),
                         child: Container(
-  width: 50,
-  height: 50,
-  child: FittedBox(
-    fit: BoxFit.cover,
-    child: plays?.team1.tEmblem == null
-        ? Image.asset('images/default_image_team.jpg')
-        : Image.network(
-            'https://ligasabatinadefutbol.com.mx/media/bearleague/${plays?.team1.tEmblem}',
-            errorBuilder: (BuildContext context, Object exception, StackTrace? stackTrace) {
-              return Image.asset('images/default_image_team.jpg');
-            },
-          ),
-  ),
-),
+                          width: 50,
+                          height: 50,
+                          child: FittedBox(
+                            fit: BoxFit.cover,
+                            child: plays?.team1.tEmblem == null
+                                ? Image.asset('images/default_image_team.jpg')
+                                : Image.network(
+                                    'https://ligasabatinadefutbol.com.mx/media/bearleague/${plays?.team1.tEmblem}',
+                                    errorBuilder: (BuildContext context,
+                                        Object exception,
+                                        StackTrace? stackTrace) {
+                                      return Image.asset(
+                                          'images/default_image_team.jpg');
+                                    },
+                                  ),
+                          ),
+                        ),
                       ),
                       Padding(
                         padding: const EdgeInsets.symmetric(horizontal: 8.5),
                         child: Container(
                           width: SizeConfig.blockSizeHorizontal(50),
                           height: 30,
-                          child: Text('${plays?.team1.tName}', style: const TextStyle(fontSize: 20),),
+                          child: Text(
+                            '${plays?.team1.tName}',
+                            style: const TextStyle(fontSize: 20),
+                          ),
                         ),
                       ),
                       Container(
                         width: 30,
                         height: 30,
                         child: Center(
-                          child: Text('${plays?.score1}',style: const TextStyle(fontSize: 20)),
+                          child: Text('${plays?.score1}',
+                              style: const TextStyle(fontSize: 20)),
                         ),
                       ),
                     ]),
@@ -107,20 +116,23 @@ class CardResultados extends StatelessWidget {
                         child: FittedBox(
                           fit: BoxFit.cover,
                           child: Container(
-  width: 50,
-  height: 50,
-  child: FittedBox(
-    fit: BoxFit.cover,
-    child: plays?.team1.tEmblem == null
-        ? Image.asset('images/default_image_team.jpg')
-        : Image.network(
-            'https://ligasabatinadefutbol.com.mx/media/bearleague/${plays?.team2.tEmblem}',
-            errorBuilder: (BuildContext context, Object exception, StackTrace? stackTrace) {
-              return Image.asset('images/default_image_team.jpg');
-            },
-          ),
-  ),
-),
+                            width: 50,
+                            height: 50,
+                            child: FittedBox(
+                              fit: BoxFit.cover,
+                              child: plays?.team1.tEmblem == null
+                                  ? Image.asset('images/default_image_team.jpg')
+                                  : Image.network(
+                                      'https://ligasabatinadefutbol.com.mx/media/bearleague/${plays?.team2.tEmblem}',
+                                      errorBuilder: (BuildContext context,
+                                          Object exception,
+                                          StackTrace? stackTrace) {
+                                        return Image.asset(
+                                            'images/default_image_team.jpg');
+                                      },
+                                    ),
+                            ),
+                          ),
                         ),
                       ),
                       Padding(
@@ -128,16 +140,18 @@ class CardResultados extends StatelessWidget {
                         child: Container(
                           width: SizeConfig.blockSizeHorizontal(50),
                           height: 30,
-                          child: Text('${plays?.team2.tName}',style: const TextStyle(fontSize: 20)),
+                          child: Text('${plays?.team2.tName}',
+                              style: const TextStyle(fontSize: 20)),
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.symmetric(horizontal:4.0),
+                        padding: const EdgeInsets.symmetric(horizontal: 4.0),
                         child: Container(
                           width: 25,
                           height: 30,
                           child: Center(
-                            child: Text('${plays?.score2}',style: const TextStyle(fontSize: 20)),
+                            child: Text('${plays?.score2}',
+                                style: const TextStyle(fontSize: 20)),
                           ),
                         ),
                       ),
@@ -184,93 +198,99 @@ class CardResultados extends StatelessWidget {
                                   ),
                                   Row(
                                     mainAxisAlignment: MainAxisAlignment.center,
-                                    children:  [
+                                    children: [
                                       SizedBox(
                                         width: 80,
                                         height: 80,
                                         child: plays?.team2.tEmblem == null
-                                      ? Image.asset('images/logoLigaTorneo.jpg')
-                                      : Image.network(
-                                         'https://ligasabatinadefutbol.com.mx/media/bearleague/${plays?.team1.tEmblem}',
-                                        errorBuilder: (context, error, stackTrace) {
-                                      return Image.asset(
-                                      'images/logoLigaTorneo.jpg');
-                                          },
-                                        ),
+                                            ? Image.asset(
+                                                'images/logoLigaTorneo.jpg')
+                                            : Image.network(
+                                                'https://ligasabatinadefutbol.com.mx/media/bearleague/${plays?.team1.tEmblem}',
+                                                errorBuilder: (context, error,
+                                                    stackTrace) {
+                                                  return Image.asset(
+                                                      'images/logoLigaTorneo.jpg');
+                                                },
+                                              ),
                                       ),
                                       SizedBox(
-                                      width: SizeConfig.blockSizeHorizontal(2),
-                                        ),
-                                      
-                                           SizedBox(
-                                          width: SizeConfig.blockSizeHorizontal(2),
-                                            ),
-                                            
-                                         SizedBox(
-                                        width: SizeConfig.blockSizeHorizontal(2),
-                                        ),
-                                        
+                                        width:
+                                            SizeConfig.blockSizeHorizontal(2),
+                                      ),
+                                      SizedBox(
+                                        width:
+                                            SizeConfig.blockSizeHorizontal(2),
+                                      ),
+                                      SizedBox(
+                                        width:
+                                            SizeConfig.blockSizeHorizontal(2),
+                                      ),
                                       SizedBox(
                                         width: 80,
                                         height: 80,
                                         child: plays?.team2.tEmblem == null
-                                      ? Image.asset('images/logoLigaTorneo.jpg')
-                                      : Image.network(
-                                         'https://ligasabatinadefutbol.com.mx/media/bearleague/${plays?.team2.tEmblem}',
-                                        errorBuilder: (context, error, stackTrace) {
-                                      return Image.asset(
-                                      'images/logoLigaTorneo.jpg');
-                                          },
-                                        ),
+                                            ? Image.asset(
+                                                'images/logoLigaTorneo.jpg')
+                                            : Image.network(
+                                                'https://ligasabatinadefutbol.com.mx/media/bearleague/${plays?.team2.tEmblem}',
+                                                errorBuilder: (context, error,
+                                                    stackTrace) {
+                                                  return Image.asset(
+                                                      'images/logoLigaTorneo.jpg');
+                                                },
+                                              ),
                                       ),
                                     ],
                                   ),
                                   Row(
-                        children: [
-                          Text(
-                            'Lugar: ',
-                            style: SafeGoogleFont('Nunito',
-                                fontSize: 16, fontWeight: FontWeight.bold),
-                          ),
-                          Text(
-                            '${plays?.mLocation} ',
-                            style: SafeGoogleFont('Nunito',
-                                color: const Color(0XFf595959)),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Text(
-                            'Hora: ',
-                            style: SafeGoogleFont('Nunito',
-                                fontSize: 16, fontWeight: FontWeight.bold),
-                          ),
-                          Text(
-                            '${plays?.mTime} ',
-                            style: SafeGoogleFont('Nunito',
-                                color: const Color(0XFf595959)),
-                          ),
-                        ],
-                      ),
-                      Row(
-                        children: [
-                          Text(
-                            'Fecha: ',
-                            style: SafeGoogleFont('Nunito',
-                                fontSize: 16, fontWeight: FontWeight.bold),
-                          ),
-                          Text(
-                            '${plays?.mDate} ',
-                            overflow: TextOverflow.ellipsis,
-                            style: SafeGoogleFont('Nunito',
-                                color: const Color(0XFf595959)),
-                          ),
-                        ],
-                      ),
+                                    children: [
+                                      Text(
+                                        'Lugar: ',
+                                        style: SafeGoogleFont('Nunito',
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      Text(
+                                        '${plays?.mLocation} ',
+                                        style: SafeGoogleFont('Nunito',
+                                            color: const Color(0XFf595959)),
+                                      ),
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Text(
+                                        'Hora: ',
+                                        style: SafeGoogleFont('Nunito',
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      Text(
+                                        '${plays?.mTime} ',
+                                        style: SafeGoogleFont('Nunito',
+                                            color: const Color(0XFf595959)),
+                                      ),
+                                    ],
+                                  ),
+                                  Row(
+                                    children: [
+                                      Text(
+                                        'Fecha: ',
+                                        style: SafeGoogleFont('Nunito',
+                                            fontSize: 16,
+                                            fontWeight: FontWeight.bold),
+                                      ),
+                                      Text(
+                                        '${plays?.mDate} ',
+                                        overflow: TextOverflow.ellipsis,
+                                        style: SafeGoogleFont('Nunito',
+                                            color: const Color(0XFf595959)),
+                                      ),
+                                    ],
+                                  ),
                                 ],
                               )
-
                             ],
                           ),
                         ),
@@ -286,7 +306,10 @@ class CardResultados extends StatelessWidget {
                     },
                   );
                 },
-                child: Text('Detalles'),
+                child: Text('Detalles',
+                    style: SafeGoogleFont('Nunito',
+                        color: Color(0xfffffffff),
+                        fontWeight: FontWeight.bold)),
               ),
             ),
           ),

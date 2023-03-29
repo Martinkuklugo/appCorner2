@@ -12,21 +12,6 @@ class CardTitle extends StatelessWidget {
     return Padding(
       padding: const EdgeInsets.all(10),
       child: Container(
-        // decoration: BoxDecoration(
-        //     color: Colors.white,
-        //     boxShadow: [
-        //       BoxShadow(
-        //         color: Colors.grey.shade600,
-        //         spreadRadius: 1,
-        //         blurRadius: 5,
-        //         offset: const Offset(0, 3),
-        //       ),
-        //       BoxShadow(
-        //         color: Colors.grey.shade300,
-        //         offset: const Offset(-5, 0),
-        //       ),
-        //     ],
-        //     borderRadius: BorderRadius.circular(12)),
         child: Container(
           decoration: const BoxDecoration(
               border: Border(
@@ -38,7 +23,41 @@ class CardTitle extends StatelessWidget {
                 Text(
                   'Equipos participantes en el torneo ',
                   style: SafeGoogleFont('Nunito',
-                      color: const Color(0XFf595959),
+                      color: const Color(0XFF000000),
+                      fontSize: 20,
+                      fontWeight: FontWeight.bold),
+                ),
+              ],
+            ),
+          ),
+        ),
+      ),
+    );
+  }
+}
+
+class CardTitleNews extends StatelessWidget {
+  const CardTitleNews({
+    super.key,
+  });
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.all(10),
+      child: Container(
+        child: Container(
+          decoration: const BoxDecoration(
+              border: Border(
+                  left: BorderSide(color: Color(0xFF4ECF84), width: 10))),
+          child: Padding(
+            padding: const EdgeInsets.all(5),
+            child: Row(
+              children: [
+                Text(
+                  'Noticias de la liga ',
+                  style: SafeGoogleFont('Nunito',
+                      color: const Color(0XFF000000),
                       fontSize: 20,
                       fontWeight: FontWeight.bold),
                 ),
