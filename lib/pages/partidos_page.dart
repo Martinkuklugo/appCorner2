@@ -248,27 +248,172 @@ class PartidosPage extends StatelessWidget {
                                           ),
                                           child: Center(
                                             child: TextButton(
-                                              onPressed: () {
-                                                Navigator.push(
-                                                    context,
-                                                    MaterialPageRoute(
-                                                        builder: (context) =>
-                                                            DetetallesPartido(
-                                                                partidos:
-                                                                    plays)));
-                                              },
-                                              child: Text(
-                                                'Detalles',
-                                                style: SafeGoogleFont(
-                                                  'Nunito',
-                                                  fontSize: 14 * ffem,
-                                                  fontWeight: FontWeight.w800,
-                                                  height: 1.3625 * ffem / fem,
-                                                  color:
-                                                      const Color(0xffFFFFFF),
+                onPressed: () {
+                  showDialog(
+                    context: context,
+                    builder: (BuildContext context) {
+                      return AlertDialog(
+                        title: const Text('Detalles'),
+                        content: SingleChildScrollView(
+                          child: ListBody(
+                            children: <Widget>[
+                              Column(
+                                children: [
+                                  SizedBox(
+                                    width: SizeConfig.screenWidth,
+                                    child: Text(
+                                      '${plays?.team1.tName}  vs  ${plays?.team2.tName}',
+                                      textAlign: TextAlign.center,
+                                      style: SafeGoogleFont('Nunito',
+                                          fontWeight: FontWeight.bold,
+                                          fontSize: 15,
+                                          color: const Color(0xff595959)),
+                                    ),
+                                  ),
+                                  const SizedBox(
+                                    height: 10,
+                                  ),
+                                  Row(
+                                    mainAxisAlignment: MainAxisAlignment.center,
+                                    children:  [
+                                      SizedBox(
+                                        width: 80,
+                                        height: 80,
+                                        child: plays?.team2.tEmblem == null
+                                      ? Image.asset('images/logoLigaTorneo.jpg')
+                                      : Image.network(
+                                         'https://ligasabatinadefutbol.com.mx/media/bearleague/${plays?.team1.tEmblem}',
+                                        errorBuilder: (context, error, stackTrace) {
+                                      return Image.asset(
+                                      'images/logoLigaTorneo.jpg');
+                                          },
+                                        ),
+                                      ),
+                                      SizedBox(
+                                      width: SizeConfig.blockSizeHorizontal(2),
+                                        ),
+                                      SizedBox(
+                                           width: 20,
+                                          height: 20,
+                                          child: Center(
+                                            child: Text(
+                                            '${plays?.score1}',
+                                              style: SafeGoogleFont('Nunito',
+                                                fontWeight: FontWeight.bold, fontSize: 15),
+                                              textAlign: TextAlign.center,
                                                 ),
                                               ),
                                             ),
+                                           SizedBox(
+                                          width: SizeConfig.blockSizeHorizontal(2),
+                                            ),
+                                            Padding(
+                                            padding: const EdgeInsets.symmetric(horizontal: 4.0),
+                                              child: SizedBox(
+                                              width: 20,
+                                              height: 20,
+                                              child: Center(
+                                                child: Text(
+                                                  ':',
+                                                  textAlign: TextAlign.center,
+                                                  style: SafeGoogleFont('Nunito',
+                                                fontWeight: FontWeight.bold, fontSize: 15),
+                                                ),
+                                              ),
+                                            ),
+                                         ),
+                                         SizedBox(
+                                        width: SizeConfig.blockSizeHorizontal(2),
+                                        ),
+                                        SizedBox(
+                                        width: 20,
+                                        height: 20,
+                                        child: Center(
+                                          child: Text('${plays?.score2}',
+                                            style: SafeGoogleFont('Nunito',
+                                            fontWeight: FontWeight.bold, fontSize: 15),
+                                            textAlign: TextAlign.center
+                                            ),
+                                          ),
+                                        ),
+                                      SizedBox(
+                                        width: 80,
+                                        height: 80,
+                                        child: plays?.team2.tEmblem == null
+                                      ? Image.asset('images/logoLigaTorneo.jpg')
+                                      : Image.network(
+                                         'https://ligasabatinadefutbol.com.mx/media/bearleague/${plays?.team2.tEmblem}',
+                                        errorBuilder: (context, error, stackTrace) {
+                                      return Image.asset(
+                                      'images/logoLigaTorneo.jpg');
+                                          },
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                  Row(
+                        children: [
+                          Text(
+                            'Lugar: ',
+                            style: SafeGoogleFont('Nunito',
+                                fontSize: 16, fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            '${plays?.mLocation} ',
+                            style: SafeGoogleFont('Nunito',
+                                color: const Color(0XFf595959)),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            'Hora: ',
+                            style: SafeGoogleFont('Nunito',
+                                fontSize: 16, fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            '${plays?.mTime} ',
+                            style: SafeGoogleFont('Nunito',
+                                color: const Color(0XFf595959)),
+                          ),
+                        ],
+                      ),
+                      Row(
+                        children: [
+                          Text(
+                            'Fecha: ',
+                            style: SafeGoogleFont('Nunito',
+                                fontSize: 16, fontWeight: FontWeight.bold),
+                          ),
+                          Text(
+                            '${plays?.mDate} ',
+                            overflow: TextOverflow.ellipsis,
+                            style: SafeGoogleFont('Nunito',
+                                color: const Color(0XFf595959)),
+                          ),
+                        ],
+                      ),
+                                ],
+                              )
+
+                            ],
+                          ),
+                        ),
+                        actions: <Widget>[
+                          TextButton(
+                            child: const Text('Cerrar'),
+                            onPressed: () {
+                              Navigator.of(context).pop();
+                            },
+                          ),
+                        ],
+                      );
+                    },
+                  );
+                },
+                child: Text('Detalles'),
+              ),
                                           ),
                                         ),
                                       ],

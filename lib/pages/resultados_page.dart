@@ -4,6 +4,7 @@ import 'package:liga_corner_app/dtos/providers/partidos_provider.dart';
 import 'package:liga_corner_app/widgets/card_resultados.dart';
 import 'package:liga_corner_app/widgets/card_titile.dart';
 import 'package:liga_corner_app/widgets/config_Responsive.dart';
+import 'package:liga_corner_app/widgets/dialog_results.dart';
 import 'package:provider/provider.dart';
 
 class ResultadosPage extends StatelessWidget {
@@ -45,7 +46,6 @@ class ResultadosPage extends StatelessWidget {
                                           vertical: 5),
                                       child: CardResultados(
                                           plays: plays, fem: fem, ffem: ffem),
-                                          
                                     );
                                   })))
             ])));
