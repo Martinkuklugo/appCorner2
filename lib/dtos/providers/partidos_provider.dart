@@ -15,8 +15,8 @@ class PartidosProvider extends ChangeNotifier {
       _partidos; // obtener datos del usuario
 
   Future fetchUsers() async {
-    final response = await http
-        .get(Uri.parse('http://api.ligasabatinadefutbol.com.mx/api/matches?page=100'));
+    final response = await http.get(Uri.parse(
+        'http://api.ligasabatinadefutbol.com.mx/api/matches?page=100'));
 
     if (response.statusCode == 200) {
       // If the server did return a 200 OK response,
@@ -25,6 +25,7 @@ class PartidosProvider extends ChangeNotifier {
       final List<dynamic> data = json['data'];
       _partidos = data.map((e) => PartidosResponseDto.fromMap(e)).toList();
       isLoading = false;
+      logger.d(data);
       notifyListeners();
     } else {
       throw Exception('Failed to load album');
