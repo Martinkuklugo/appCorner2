@@ -107,10 +107,9 @@ class TorneosPages extends StatelessWidget {
                     children: [
                       const CardTitleNews(),
                       Padding(
-                        padding: const EdgeInsets.symmetric(vertical:8.0, horizontal: 12),
+                        padding: const EdgeInsets.symmetric(vertical:8.0,),
                         child: ListTile(
                           leading: Container(
-                            margin: const EdgeInsets.symmetric(horizontal: 10),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(999),
                               color: Colors.grey,
@@ -128,10 +127,9 @@ class TorneosPages extends StatelessWidget {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.symmetric(vertical:8.0),
                         child: ListTile(
                           leading: Container(
-                            margin: const EdgeInsets.symmetric(horizontal: 10),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(999),
                               color: Colors.grey,
@@ -149,10 +147,9 @@ class TorneosPages extends StatelessWidget {
                         ),
                       ),
                       Padding(
-                        padding: const EdgeInsets.all(8.0),
+                        padding: const EdgeInsets.symmetric(vertical:8.0),
                         child: ListTile(
                           leading: Container(
-                            margin: const EdgeInsets.symmetric(horizontal: 10),
                             decoration: BoxDecoration(
                               borderRadius: BorderRadius.circular(25),
                               color: Colors.grey,
